@@ -62,7 +62,12 @@
     if(empty($errors)) {
       // Write SQL INSERT statement
       // $sql = "";
+      $first_name = filter_var($first_name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+      $last_name = filter_var($last_name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+      $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+      $username = filter_var($username, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
       $date = date("Y-m-d H:i:s");
+      
       $sql = "INSERT INTO user(first_name, last_name, email, username, created_at) VALUES ('{$first_name}', '{$last_name}', '{$email}', '{$username}', '{$date}')";
       // For INSERT statments, $result is just true/false
       $result = db_query($db, $sql);

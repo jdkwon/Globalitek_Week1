@@ -1,6 +1,6 @@
 # Project 1 - Globitek CMS
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
 ## User Stories
 
@@ -13,7 +13,7 @@ The following **required** functionality is completed:
 2. [X]  Required: Create a Page with an HTML Form
   * [X]  Required: It has required text inputs.
   * [X]  Required: It submits to itself.
-  * [ ]  Required: It looks correct in a browser.
+  * [X]  Required: It looks correct in a browser.
   
 3. [X]  Required: Detect when the form is submitted.
   * [X]  Required: When page loads, page displays the form.
@@ -27,11 +27,11 @@ The following **required** functionality is completed:
   * [X]  Required: Validate that username has at least 8 characters.
   * [X]  Required: Validate that email contains a "@".
 
-5. [ ]  Required: Display form errors if any validations fail.
-  * [ ]  Required: Do not submit the data to the database.
-  * [ ]  Required: Redisplay the form with the submitted values filled in.
-  * [ ]  Required: Report all errors as a list above the form.
-  * [ ]  Required: Test each field to ensure you get the expected errors.
+5. [X]  Required: Display form errors if any validations fail.
+  * [X]  Required: Do not submit the data to the database.
+  * [X]  Required: Redisplay the form with the submitted values filled in.
+  * [X]  Required: Report all errors as a list above the form.
+  * [X]  Required: Test each field to ensure you get the expected errors.
 
 6. [X]  Required: Submit successfully-validated form values to the database.
   * [X]  Required: Write an SQL insert statement.
@@ -64,6 +64,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
+It's been a while since I have used PHP/MYSQL so I had to look up the syntax in order to write the code that was necessary. I also had issues with my PHP settings initially which slowed me down and lead me to trying to fix the server issues on my laptop rather than concentrating on writing code.
+
 
 ## License
 
