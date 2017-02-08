@@ -100,7 +100,6 @@
       Last Name: <input type="text" name="last_name" value="<?php echo (isset($last_name)) ? $last_name:'';?>" /><br />
       Email: <input type="text" name="email" value="<?php echo (isset($email)) ? $email:'';?>" /><br />
       Username: <input type="text" name="username" value="<?php echo (isset($username)) ? $username:'';?>" /><br />
-      Password: <input type="password" name="password" value="<?php echo (isset($password)) ? $password:'';?>" /><br />
       <input type="submit" name="submit" value="Sumit" />
     </form>
   </section>
