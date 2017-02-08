@@ -55,7 +55,10 @@
     }
 
     // Validate username
-    if(is_blank($username) || !has_length($username, ['min' => 8, 'max' => 255])) {
+    if(is_blank($username) {
+      $errors[] = "Username cannot be blank.";
+    }
+    elseif(!has_length($username, ['min' => 8, 'max' => 255])) {
       $errors[] = "Username must be at least 8 characters and less than 255 characters.";
     }
     elseif(!has_unique_username($username)) {
