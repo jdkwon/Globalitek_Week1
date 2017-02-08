@@ -25,7 +25,7 @@
     if(is_blank($first_name)) {
       $errors[] = "First name cannot be blank.";
     } 
-    elseif (!has_length($_POST['first_name'], ['min' => 2, 'max' => 255])) {
+    elseif (!has_length($first_name, ['min' => 2, 'max' => 255])) {
       $errors[] = "First name must be between 2 and 255 characters.";
     }
     elseif(!has_valid_name($first_name)) {
@@ -33,10 +33,10 @@
     }
 
     // Validate last name
-    if (is_blank($_POST['last_name'])) {
+    if (is_blank($last_name)) {
       $errors[] = "Last name cannot be blank.";
     } 
-    elseif (!has_length($_POST['last_name'], ['min' => 2, 'max' => 255])) {
+    elseif (!has_length($last_name, ['min' => 2, 'max' => 255])) {
       $errors[] = "Last name must be between 2 and 255 characters.";
     }
     elseif(!has_valid_name($last_name)) {
@@ -50,15 +50,15 @@
     elseif (!has_valid_email_format($email)) {
       $errors[] = "Email must be a valid format. e.g. test@test.com";
     }
-    elseif (!has_length($_POST['email'], ['max' => 255])) {
+    elseif (!has_length($email, ['max' => 255])) {
       $errors[] = "Email must be less than 255 characters.";
     }
 
     // Validate username
-    if(is_blank($username) {
+    if(is_blank($username)) {
       $errors[] = "Username cannot be blank.";
     }
-    elseif(!has_length($username, ['min' => 8, 'max' => 255])) {
+    elseif(!has_length($_POST['username'], ['min' => 8, 'max' => 255])) {
       $errors[] = "Username must be at least 8 characters and less than 255 characters.";
     }
     elseif(!has_unique_username($username)) {
