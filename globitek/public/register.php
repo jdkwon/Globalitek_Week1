@@ -6,6 +6,7 @@
   $last_name = "";
   $email = "";
   $username = "";
+  $errors = [];
 
   // if this is a POST request, process the form
   // Hint: private/functions.php can help
@@ -61,7 +62,8 @@
     if(empty($errors)) {
       // Write SQL INSERT statement
       // $sql = "";
-      $sql = "INSERT INTO user(first_name, last_name, email, username, password, created_at) VALUES ('" . $first_name . "', '" . $last_name . "', '" . $email . "', '" . $username . "', '" . date("Y-m-d H:i:s") . "')" ;
+      $date = date("Y-m-d H:i:s");
+      $sql = "INSERT INTO user(first_name, last_name, email, username, created_at) VALUES ('{$first_name}', '{$last_name}', '{$email}', '{$username}', '{$date}')";
       // For INSERT statments, $result is just true/false
       $result = db_query($db, $sql);
 

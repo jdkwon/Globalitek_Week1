@@ -23,13 +23,7 @@
 
   // has_valid_email_format('test@test.com')
   function has_valid_email_format($value) {
-    // TODO
-    $value = filter_var($value, FILTER_SANITIZE_EMAIL);
-
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-      return false;
-    }
-    else return true;
+    return filter_var($value, FILTER_VALIDATE_EMAIL);
   }
 
   function unique_key($value) {
