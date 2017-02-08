@@ -21,7 +21,7 @@
     return $_SERVER['REQUEST_METHOD'] == 'POST';
   }
 
-  function display_errors($errors=[]) {
+  function display_errors($errors=array()) {
     $output = '';
     if (!empty($errors)) {
       $output .= "<div class=\"errors\">";

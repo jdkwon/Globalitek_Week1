@@ -23,16 +23,16 @@
     if(is_blank($first_name)) {
       $errors[] = "First name cannot be blank.";
     } 
-    elseif (!has_length($_POST['first_name'], ['min' => 2, 'max' => 20])) {
-      $errors[] = "First name must be between 2 and 20 characters.";
+    elseif (!has_length($_POST['first_name'], ['min' => 2, 'max' => 255])) {
+      $errors[] = "First name must be between 2 and 255 characters.";
     }
 
     // Validate last name
     if (is_blank($_POST['last_name'])) {
       $errors[] = "Last name cannot be blank.";
     } 
-    elseif (!has_length($_POST['last_name'], ['min' => 2, 'max' => 30])) {
-      $errors[] = "Last name must be between 2 and 30 characters.";
+    elseif (!has_length($_POST['last_name'], ['min' => 2, 'max' => 255])) {
+      $errors[] = "Last name must be between 2 and 255 characters.";
     }
 
     // Validate email
@@ -42,13 +42,16 @@
     elseif (!has_valid_email_format($email)) {
       $errors[] = "Email must be a valid format. e.g. test@test.com";
     }
+    elseif (!has_length($_POST['email'], ['max' => 255])) {
+      $errors[] = "Email must be less than 255 characters.";
+    }
     // elseif(!unique_key($email)) {
     //   $errors[] = "Email is already being used.";
     // }
 
     // Validate username
     if(is_blank($username) || !has_length($username, ['min' => 8, 'max' => 255])) {
-      $errors[] = "Username must be at least 8 characters.";
+      $errors[] = "Username must be at least 8 characters and less than 255 characters.";
     }
     // elseif(!unique_key($username)) {
     //   $errors[] = "Username is already being used.";
@@ -91,14 +94,16 @@
   ?>
 
   <!-- TODO: HTML form goes here -->
-  <form action="register.php" method="post">
-    First Name: <input type="text" name="first_name" value="<?php echo (isset($first_name)) ? $first_name:'';?>" /><br />
-    Last Name: <input type="text" name="last_name" value="<?php echo (isset($last_name)) ? $last_name:'';?>" /><br />
-    Email: <input type="text" name="email" value="<?php echo (isset($email)) ? $email:'';?>" /><br />
-    Username: <input type="text" name="username" value="<?php echo (isset($username)) ? $username:'';?>" /><br />
-    Password: <input type="password" name="password" value="<?php echo (isset($password)) ? $password:'';?>" /><br />
-    <input type="submit" name="submit" value="Sumit" />
-  </form>
+  <section>
+    <form action="register.php" method="post">
+      First Name: <input type="text" name="first_name" value="<?php echo (isset($first_name)) ? $first_name:'';?>" /><br />
+      Last Name: <input type="text" name="last_name" value="<?php echo (isset($last_name)) ? $last_name:'';?>" /><br />
+      Email: <input type="text" name="email" value="<?php echo (isset($email)) ? $email:'';?>" /><br />
+      Username: <input type="text" name="username" value="<?php echo (isset($username)) ? $username:'';?>" /><br />
+      Password: <input type="password" name="password" value="<?php echo (isset($password)) ? $password:'';?>" /><br />
+      <input type="submit" name="submit" value="Sumit" />
+    </form>
+  </section>
 
   </body>
 </html>

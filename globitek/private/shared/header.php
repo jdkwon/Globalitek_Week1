@@ -4,7 +4,7 @@ if(!isset($page_title)) {
 }
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title><?php echo h($page_title); ?></title>
