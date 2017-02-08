@@ -26,8 +26,25 @@
     return filter_var($value, FILTER_VALIDATE_EMAIL);
   }
 
-  function unique_key($value) {
+  // return TRUE if it is unique, FALSE when there exists
+  function has_unique_username($value) {
+    $value = filter_var($value, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    global $db;
+    $sql = "SELECT * FROM users WHERE username='" . $value . "';";
+    $query = db_query($db, $sql);
+
+    while($result = $query->fetch_assoc()) {
+      if($value == $result['username']) return false;
+    }
     return true;
+  }
+
+  function has_valid_name($value) {
+    return preg_match('/\A[A-Za-z\s\-,\.\']+\Z/', $value);
+  }
+
+  function has_valid_username($value) {
+    return preg_match('/\A[A-Za-z0-9_]+\Z/', $value);
   }
 
 ?>
